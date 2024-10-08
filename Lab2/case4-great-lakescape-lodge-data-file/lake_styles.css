@@ -1,0 +1,78 @@
+﻿@charset "UTF-8";
+
+@font-face {
+    font-family: 'DobkinPlain';
+    src: url('DobkinPlain.woff') format('woff');
+}
+
+/* 全局样式 */
+body {
+    display: block;
+    font-family: 'DobkinPlain', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* 背景颜色 */
+}
+
+/* 导航栏样式 */
+header > nav {
+    background-color: #673ab7; /* 紫色导航栏 */
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white; /* 导航链接为白色 */
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #d1c4e9; /* 链接悬停时的浅紫色 */
+}
+
+/* 右侧导航栏 */
+
+#rightcol{
+    min-height: 100vh;
+    width: 300px;
+    background-color: #d1c4e9;
+}
+
+/* 中间内容区域（Welcome 以下部分） */
+#leftcol {
+    background-color: #212121;
+    color: white;
+    padding: 20px;
+    margin-right: 260px;
+    min-height: 100vh;
+}
+
+/* Notes 栏目的样式 */
+aside:nth-of-type(1) {
+    background-color: #a9c4d8;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+/* Upcoming Events 栏目的样式 */
+aside:nth-of-type(2) {
+    background-color: #c2cde0;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+
+/* 底部区域样式 */
+footer {
+    background-color: #263238; /* 深灰色背景 */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
