@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Centered Smiley Face with Text Background</title>
+    <style>
+        body {
+            background-color: white; /* 整个页面背景为白色 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 使内容垂直居中 */
+            margin: 0;
+        }
+        canvas {
+            border: 2px solid black; /* 可选的边框，用来更好地显示笑脸区域 */
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="450"></canvas>
+<script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // 设置浅绿色背景，覆盖整个 canvas
+    ctx.fillStyle = "lightgreen"; // 背景颜色为浅绿色
+    ctx.fillRect(0, 0, canvas.width, canvas.height); // 填充整个画布区域
+
+    // 画黄色圆形作为脸部
+    ctx.beginPath();
+    ctx.arc(200, 200, 150, 0, Math.PI * 2, true); // 外圆
+    ctx.fillStyle = "yellow"; // 填充颜色为黄色
+    ctx.fill();
+    ctx.stroke(); // 描边
+
+    // 绘制眼睛
+    ctx.beginPath();
+    ctx.arc(150, 150, 15, 0, Math.PI * 2, true);  // 左眼
+    ctx.arc(250, 150, 15, 0, Math.PI * 2, true);  // 右眼
+    ctx.fillStyle = "black"; // 眼睛填充为黑色
+    ctx.fill();
+
+    // 绘制鼻子
+    ctx.beginPath();
+    ctx.moveTo(200, 150);
+    ctx.lineTo(200, 220); // 画一条垂直线作为鼻子
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    // 绘制笑脸
+    ctx.beginPath();
+    ctx.arc(200, 240, 70, 0, Math.PI, false);  // 半圆作为嘴巴
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    // 添加文本，位于笑脸下方，且背景也是浅绿色
+    ctx.font = "20px Arial";
+    ctx.fillStyle = "darkgreen"; // 文本颜色为深绿色
+    ctx.fillText("The Canvas brought me to life!", 50, 420); // 添加文本在画布底部
+</script>
+</body>
+</html>
